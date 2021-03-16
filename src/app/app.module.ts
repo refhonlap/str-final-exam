@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { UserListComponent } from './page/user-list/user-list.component';
 import { UserEditorComponent } from './page/user-editor/user-editor.component';
+
+import { OrderModule } from 'ngx-order-pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderPipe } from './pipes/order.pipe';
 
@@ -26,6 +28,7 @@ import { OrderPipe } from './pipes/order.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

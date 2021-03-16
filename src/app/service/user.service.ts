@@ -35,15 +35,16 @@ export class UserService {
    * Delete a user from the database.
    * The method is: this.http.delete
    */
-  delete(id: User): void {
-    this.http.delete<User>(`${this.endpoint}/${id}`);
+  remove(user: User): Observable<User> {
+    return this.http.delete<User>(`${this.endpoint}/${user.id}`);
   }
-
+  
 
   /**
    * Create a user in the database.
    * The method is: this.http.post
    */
+  
 
 
 

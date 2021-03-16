@@ -5,8 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any[], phrase: string): any {
+    if (!value || !phrase) {
+      return value;
+    }
+
+    phrase = phrase.toLowerCase();
+
+    return value.filter(item => {
+      const jsonItem: string = JSON.stringify(item.name).toLowerCase()
+        .replace(/"[^"]*"\:/g, '')
+        .replace(/[",\{\}]/g, '');
+      return jsonItem.includes(phrase);
+    });
   }
 
 }
